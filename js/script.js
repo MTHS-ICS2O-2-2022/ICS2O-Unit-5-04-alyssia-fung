@@ -6,17 +6,23 @@
 
 "use strict"
 
-function myButtonClicked() {
-  const userAge = document.getElementById("age").value
-  document.getElementById("age").innerHTML = userAge
-  const day = document.getElementById("day").value
-  document.getElementById("day").innerHTML = day
+/**
+ * Check servie worker.
+ */
 
-  if (day == "tuesday" || day == "thursday" || (age > "12" && age < "21")) {
-    document.getElementById("price").innerHTML =
-      "You are eligible for discounted pricing."
+function calculate() {
+  let inputedAge = document.getElementById("age").value
+  let inputedDay = document.getElementById("day").value
+
+  if (
+    inputedDay == "Tuesday" ||
+    inputedDay == "Thursday" ||
+    (inputedAge > 12 && inputedAge < 21)
+  ) {
+    document.getElementById("answer").innerHTML =
+      "You're able to get the discount!"
   } else {
-    document.getElementById("price").innerHTML =
-      "You are not eligible for discounted pricing."
+    document.getElementById("answer").innerHTML =
+      "Sorry, you must pay for regular pricing."
   }
 }
